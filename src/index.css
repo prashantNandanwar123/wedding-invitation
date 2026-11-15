@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; overflow-x: hidden; background: #3B0718; color: #FFF8E7;
+  font-family: 'Cormorant Garamond', serif; font-size: 18px; -webkit-font-smoothing: antialiased;
+}
+@layer components {
+  .gold-text {
+    background: linear-gradient(110deg, #9c7a2e 0%, #f3dc9b 35%, #D4AF65 55%, #f3dc9b 75%, #9c7a2e 100%);
+    background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: shine 6s linear infinite;
+  }
+  .gold-border { border: 1px solid #D4AF65; box-shadow: inset 0 0 0 4px #3B0718, inset 0 0 0 5px rgba(212,175,101,.6); }
+  .btn-gold {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px;
+    padding: .75rem 2rem; font-family: Cinzel, serif; letter-spacing: .12em; font-size: .85rem; color: #3B0718;
+    background: linear-gradient(135deg, #f3dc9b, #D4AF65 50%, #b8913f); border-radius: 2px;
+    box-shadow: 0 6px 24px rgba(212,175,101,.25);
+  }
+  .btn-ghost {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px;
+    padding: .75rem 2rem; font-family: Cinzel, serif; letter-spacing: .12em; font-size: .85rem; color: #D4AF65;
+    border: 1px solid #D4AF65; border-radius: 2px;
+  }
+  .mandala-bg {
+    background-image: radial-gradient(circle at 50% 50%, transparent 0 18px, rgba(212,175,101,.09) 19px 20px, transparent 21px 38px, rgba(212,175,101,.07) 39px 40px, transparent 41px);
+    background-size: 80px 80px;
+  }
+  .section { position: relative; padding: 6rem 1.25rem; overflow: hidden; }
+}
+@keyframes shine { to { background-position: 200% center; } }
+@keyframes scrolldot { 0% { transform: translateY(0); opacity: 1 } 100% { transform: translateY(14px); opacity: 0 } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto !important; } }
+@media print { .no-print { display: none !important; } body { background: #fff; } }
